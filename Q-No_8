@@ -1,0 +1,17 @@
+def minScore(nums, k):
+    minimum = min(nums)
+    maximum = max(nums)
+    minScore = maximum - minimum
+
+    for i in range(len(nums)):
+        if nums[i] - k > maximum:
+            maximum = nums[i] - k
+        if nums[i] + k < minimum:
+            minimum = nums[i] + k
+
+    newScore = max(nums) - min(nums)
+    return min(minScore, newScore)
+
+nums = [1]
+k = 0
+print(minScore(nums, k))  # Output: 0

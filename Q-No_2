@@ -1,0 +1,7 @@
+def maxCandies(candyType):
+    unique_candies = set(candyType)
+    max_candies = len(candyType) // 2
+    return min(max_candies, len(unique_candies))
+
+candyType = [1, 1, 2, 2, 3, 3]
+print(maxCandies(candyType))
